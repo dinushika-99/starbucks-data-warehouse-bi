@@ -1,0 +1,614 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/28/2026 11:09:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-HL8VH15C"
+  DTS:CreatorName="LAPTOP-HL8VH15C\USER"
+  DTS:DTSID="{FE4F8638-57A2-4D64-A1D0-5D7DE510610D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="UpdateFactSales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{AB9F51C2-C396-4E41-B086-7200FDE787EF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_CompletionFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8D1B7CC4-693B-4AB2-8966-9C71BE7ADC45}"
+      DTS:ObjectName="CM_CompletionFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\4. SLIIT    Information Technology\3 Year 1 Sem - Data science\3rd Year assignment , labs, datasets\DWBI Assaignment\Starbucks_ETL_Solution\Data\OrderCompletionData.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{4AB957CD-1271-4850-A742-FD411390DAF0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AccmTxnCompleteTime"
+              DTS:DTSID="{B56E9480-EEB6-4984-9E1C-5DF6E7242613}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_DW.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA97DF09-7567-434F-9818-9C08A8636134}"
+      DTS:ObjectName="LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_DW.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HL8VH15C\MSSQLSERVER2;User ID=sa;Initial Catalog=Starbucks_DW;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-UpdateFactSales-{DA97DF09-7567-434F-9818-9C08A8636134}LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_DW.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1leLvOg0aUW+0ruGi8LJgwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4VbbRCXD8wjBhFma977tsTHKRZk5iNxz1ukEKEmUqQQAAAAAOgAAAAAIAACAAAABdCfg5cGJp2cMk9S78M7OtrdI9rLgA4jgp9DPNqpguEiAAAAB9lKFbr1g+HAMzQHlrDocuboLoteCoBkTHrLczJyniSUAAAAAjhDQnLdgYZ4P9RhJ/7UkJtfLAvKQr4rc08X76fH7H+RjC+CBWoZ8EcuuOz0UR9ISixENwX9YThUsKBmr+gL7y</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_Staging.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{561B4490-C01E-42B4-BDAA-9682D874084C}"
+      DTS:ObjectName="LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_Staging.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HL8VH15C\MSSQLSERVER2;User ID=sa;Initial Catalog=Starbucks_Staging;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-UpdateFactSales-{561B4490-C01E-42B4-BDAA-9682D874084C}LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_Staging.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1leLvOg0aUW+0ruGi8LJgwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABhk23pgX4oNGeiboFbZpGiHinrLRUUXdq+l/ilkX8CCgAAAAAOgAAAAAIAACAAAAC6TikpGFxuuHa0duwNDwTpES96RZS7KAiG/Fj3RX0gZiAAAADgRRCfDHfaiWnTZiMx7SnifYO17zhqy2XzJ7EVv268P0AAAADtz4GOhLRsRURJujYz+SmMrlhP900lKOoQoX34TjSUgaXSs89AGSXGtNOql7y5tpoBlhdzs4QWTvzIEQBrImRO</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cleanup Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Truncate staging table after successful update"
+      DTS:DTSID="{6EBB9E6A-3B5F-49AD-B271-C98DF263C555}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cleanup Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{561B4490-C01E-42B4-BDAA-9682D874084C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE StgOrderCompletion;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Completion Data to Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E968549-F011-4986-828B-D821128FDD20}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Completion Data to Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="FF Source - OrderCompletionData"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_CompletionFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_CompletionFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      length="50"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[AccmTxnCompleteTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].ExternalColumns[AccmTxnCompleteTime]"
+                      length="50"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[AccmTxnCompleteTime]"
+                      name="AccmTxnCompleteTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].ExternalColumns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].ExternalColumns[AccmTxnCompleteTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AccmTxnCompleteTime" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Dest - StgOrderCompletion"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgOrderCompletion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_Staging.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HL8VH15C\MSSQLSERVER2.Starbucks_Staging.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].Columns[OrderID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].Columns[AccmTxnCompleteTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AccmTxnCompleteTime"
+                      externalMetadataColumnId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].ExternalColumns[AccmTxnCompleteTime]"
+                      lineageId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output].Columns[AccmTxnCompleteTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].ExternalColumns[AccmTxnCompleteTime]"
+                      dataType="dbTimeStamp"
+                      name="AccmTxnCompleteTime" />
+                    <externalMetadataColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Completion Data to Staging.Paths[Flat File Source Output]"
+              endId="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Completion Data to Staging\FF Source - OrderCompletionData.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate StgOrderCompletion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Clear staging table before loading new completion data"
+      DTS:DTSID="{2DF5D157-862B-442B-87E1-EEB9CD48B598}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate StgOrderCompletion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{561B4490-C01E-42B4-BDAA-9682D874084C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE StgOrderCompletion;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update FactSales Completion Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Update FactSales with completion timestamps and calculate process hours"
+      DTS:DTSID="{06AE8A82-30B8-4DE0-BD72-F29C99A6CFCC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update FactSales Completion Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DA97DF09-7567-434F-9818-9C08A8636134}"
+          SQLTask:SqlStatementSource="UPDATE f&#xA;SET AccmTxnCompleteTime = c.AccmTxnCompleteTime&#xA;FROM FactSales f&#xA;INNER JOIN Starbucks_Staging.dbo.StgOrderCompletion c &#xA;    ON f.OrderID = c.OrderID;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2B568D2C-4E15-4EC3-BAB4-16C53709163B}"
+      DTS:From="Package\Truncate StgOrderCompletion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Completion Data to Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CA8C2D47-15C9-49D1-965F-50503CA7E00F}"
+      DTS:From="Package\Load Completion Data to Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update FactSales Completion Time" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{4E22E056-5F90-412C-ACF5-715B5D3658EC}"
+      DTS:From="Package\Update FactSales Completion Time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Cleanup Staging Table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Cleanup Staging Table"
+          TopLeft="169.166657423808,327.59999772191" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Load Completion Data to Staging"
+          TopLeft="149.16665851656,147.333332308796" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Truncate StgOrderCompletion"
+          TopLeft="150.833325092164,49.3999996564786" />
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\Update FactSales Completion Time"
+          TopLeft="145.833325365352,241.799998318553" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="261.999991804362,90.9999996564786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3333326523172"
+              Start="0,0"
+              End="0,48.8333326523172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8333326523172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="265.899991940956,188.933332308796">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.8666660097572"
+              Start="0,0"
+              End="0,45.3666660097572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.3666660097572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="264.09999139458,283.399998318553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.1999994033575"
+              Start="0,0"
+              End="0,36.6999994033575">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.6999994033575" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Completion Data to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion"
+          TopLeft="133.333326048321,162.933332200315" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\Load Completion Data to Staging\FF Source - OrderCompletionData"
+          TopLeft="127.499993033708,50.2666663171185" />
+        <EdgeLayout
+          Id="Package\Load Completion Data to Staging.Paths[Flat File Source Output]"
+          TopLeft="245.899993033708,91.8666663171185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.83333301461397,71.0666658831968"
+              Start="0,0"
+              End="9.83333301461397,63.5666658831968">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5333329415984" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5333329415984"
+                    Point2="0,35.5333329415984"
+                    Point3="4,35.5333329415984" />
+                  <mssgle:LineSegment
+                    End="5.83333301461397,35.5333329415984" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.83333301461397,35.5333329415984"
+                    Point2="9.83333301461397,35.5333329415984"
+                    Point3="9.83333301461397,39.5333329415984" />
+                  <mssgle:LineSegment
+                    End="9.83333301461397,63.5666658831968" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Completion Data to Staging\OLE DB Dest - StgOrderCompletion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
