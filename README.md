@@ -1,38 +1,68 @@
-# ☕ Starbucks Data Warehouse & BI Project
+# ☕ Starbucks Data Warehouse & Business Intelligence Solution
 
 ## 📊 Overview
-This project demonstrates an end-to-end Data Warehouse and Business Intelligence solution using Starbucks customer ordering data.
+Designed and implemented an end-to-end Business Intelligence solution for analyzing Starbucks customer ordering behavior using SQL Server, SSIS, SSAS, and Power BI.
 
-## 🧱 Architecture
-Data Source → Staging → Data Warehouse → SSAS Cube → Power BI
+## 🎯 Objectives
+- Analyze customer ordering patterns
+- Track sales performance
+- Enable multidimensional analysis
+- Support business decision-making through dashboards
 
-## 🔧 Technologies Used
+## 🏗️ Solution Architecture
+
+Data Source → Staging Area → Data Warehouse → SSAS Cube → Power BI Dashboard
+
+## 🧱 Data Warehouse Design
+
+### Fact Table
+- FactSales
+
+### Dimension Tables
+- DimCustomer
+- DimDate
+- DimDrink
+- DimStore
+- DimOrder
+
+### Schema
+Star Schema
+
+## 🔄 ETL Process (SSIS)
+- Extract data from source files
+- Clean and transform data
+- Load data into dimension tables
+- Load data into fact tables
+- Implement SCD Type 2 for customer history tracking
+
+## 📈 OLAP & Analytics (SSAS)
+- Multidimensional Cube Development
+- Drill Down
+- Roll Up
+- Slice and Dice
+- Pivot Analysis
+
+## 📊 Power BI Dashboards
+- KPI Dashboard
+- Matrix Analysis
+- Sales Trend Analysis
+- Customer Ordering Analysis
+
+## 🖼️ Screenshots
+
+(Add Dashboard Images)
+
+## 🚀 Business Insights
+- Peak ordering periods
+- Most popular drink categories
+- Customer purchasing patterns
+- Store performance comparison
+
+## 🛠️ Technologies
 - SQL Server
-- SSIS (ETL)
-- SSAS (OLAP Cube)
+- SSIS
+- SSAS
 - Power BI
 
-## ⭐ Key Features
-- Star Schema (Fact + Dimension tables)
-- SCD Type 2 (Customer tracking)
-- ETL pipeline (Extract, Transform, Load)
-- Accumulating Snapshot Fact Table
-- Interactive Power BI dashboards
-
-## 📈 Reports
-- Matrix Analysis (Time vs Drink Category)
-- KPI Dashboard
-- Drill-down Analysis
-- Drill-through Reports
-
-## 🖼️ Project Posters
-(Add your images here)
-
-## 🚀 Insights Generated
-- Customer ordering trends
-- Sales performance by category
-- Channel-wise behavior
-- Time-based analysis
-
-## 📬 Author
-Weerakoon W.M.D.N
+## 👩‍💻 Author
+Nimanthi Weerakoon
