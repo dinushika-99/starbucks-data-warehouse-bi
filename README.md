@@ -62,29 +62,29 @@ Star Schema
 
 ## 📱 Screenshots
 <table>
-  <tr>
-    <td align="center">
-      <img src="images/DrillDown" width="400"/>
-      <br><b>Sales Dashboard</b>
-    </td>
+<tr>
+<td align="center">
+<img src="images/DrillDown" width="400"/>
+<br><b>Drill Down Analysis</b>
+</td>
 
-    <td align="center">
-      <img src="images/Slice" width="400"/>
-      <br><b>Customer Analysis</b>
-    </td>
-  </tr>
+<td align="center">
+<img src="images/Slice" width="400"/>
+<br><b>Slice Operation Analysis</b>
+</td>
+</tr>
 
-  <tr>
-    <td align="center">
-      <img src="images/solution-architecture.png" width="400"/>
-      <br><b>Architecture Diagram</b>
-    </td>
+<tr>
+<td align="center">
+<img src="images/solution-architecture.png" width="400"/>
+<br><b>Solution Architecture</b>
+</td>
 
-    <td align="center">
-      <img src="images/star-schema.png" width="400"/>
-      <br><b>ER Diagram</b>
-    </td>
-  </tr>
+<td align="center">
+<img src="images/star-schema.png" width="400"/>
+<br><b>Star Schema Design</b>
+</td>
+</tr>
 </table>
 
 
