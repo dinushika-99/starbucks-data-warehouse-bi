@@ -13,6 +13,8 @@ Designed and implemented an end-to-end Business Intelligence solution for analyz
 
 Data Source → Staging Area → Data Warehouse → SSAS Cube → Power BI Dashboard
 
+![Architecture](images/Starbucks_DW_Architecture.drawio (2).png)
+
 ## 🧱 Data Warehouse Design
 
 ### Fact Table
