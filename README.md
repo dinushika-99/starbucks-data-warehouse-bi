@@ -13,8 +13,6 @@ Designed and implemented an end-to-end Business Intelligence solution for analyz
 
 Data Source → Staging Area → Data Warehouse → SSAS Cube → Power BI Dashboard
 
-![Architecture](images/Starbucks_DW_Architecture.drawio (2).png)
-
 ## 🧱 Data Warehouse Design
 
 ### Fact Table
@@ -50,10 +48,6 @@ Star Schema
 - Sales Trend Analysis
 - Customer Ordering Analysis
 
-## 🖼️ Screenshots
-
-(Add Dashboard Images)
-
 ## 🚀 Business Insights
 - Peak ordering periods
 - Most popular drink categories
@@ -67,7 +61,32 @@ Star Schema
 - Power BI
 
 ## 📱 Screenshots
-![Architecture Diagram](solution-architecture.png)
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/DrillDown" width="400"/>
+      <br><b>Sales Dashboard</b>
+    </td>
+
+    <td align="center">
+      <img src="images/Slice" width="400"/>
+      <br><b>Customer Analysis</b>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="images/solution-architecture.png" width="400"/>
+      <br><b>Architecture Diagram</b>
+    </td>
+
+    <td align="center">
+      <img src="images/star-schema.png" width="400"/>
+      <br><b>ER Diagram</b>
+    </td>
+  </tr>
+</table>
+
 
 ## 👩‍💻 Author
 Nimanthi Weerakoon
