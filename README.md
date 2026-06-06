@@ -66,5 +66,8 @@ Star Schema
 - SSAS
 - Power BI
 
+## 📱 Screenshots
+![Architecture Diagram](solution-architecture.png)
+
 ## 👩‍💻 Author
 Nimanthi Weerakoon
