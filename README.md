@@ -64,24 +64,24 @@ Star Schema
 <table>
 <tr>
 <td align="center">
-<img src="images/DrillDown" width="400"/>
+<img src="Starbucks-Data-Warehouse-BI/images/DrillDown" width="400"/>
 <br><b>Drill Down Analysis</b>
 </td>
 
 <td align="center">
-<img src="images/Slice" width="400"/>
+<img src="Starbucks-Data-Warehouse-BI/images/Slice" width="400"/>
 <br><b>Slice Operation Analysis</b>
 </td>
 </tr>
 
 <tr>
 <td align="center">
-<img src="images/solution-architecture.png" width="400"/>
+<img src="Starbucks-Data-Warehouse-BI/images/solution-architecture.png" width="400"/>
 <br><b>Solution Architecture</b>
 </td>
 
 <td align="center">
-<img src="images/star-schema.png" width="400"/>
+<img src="Starbucks-Data-Warehouse-BI/images/star-schema.png" width="400"/>
 <br><b>Star Schema Design</b>
 </td>
 </tr>
