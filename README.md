@@ -85,6 +85,14 @@ Star Schema
 <br><b>Star Schema Design</b>
 </td>
 </tr>
+
+<tr>
+<td align="center">
+<img src="Starbucks-Data-Warehouse-BI/images/summary" width="400"/>
+<br><b>Summary</b>
+</td>
+</tr>
+
 </table>
 
 
